@@ -139,7 +139,7 @@ resource "aws_security_group" "ec2SG" {
 
 #### Create Ec2 Instances
 
-/* data "aws_ami" "linux_ami" {
+data "aws_ami" "linux_ami" {
   most_recent = true
   owners      = ["amazon"]
 
@@ -153,21 +153,6 @@ filter {
     values = ["hvm"]
   }
 
-} */
-
-data "aws_ami" "ubuntu" {
-  most_recent = true
-  owners      = ["679593333241"]
-
-  filter {
-    name   = "name"
-    values = ["ubuntu-minimal/images/hvm-ssd/ubuntu-focal-20.04-*"]
-  }
-
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
 }
 
 output "amiid"{
