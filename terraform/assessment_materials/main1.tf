@@ -37,3 +37,4 @@ resource "aws_iam_role_policy_attachment" "lambda_role_policy" {
   role       = "${aws_iam_role.terraform_lambda_role.name}"
   policy_arn = "arn:aws:iam::481450237232:policy/lambda_execution_role"
 }
+

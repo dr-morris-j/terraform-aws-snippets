@@ -2,10 +2,21 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.0"
+      version = ">= 4.0"
     }
   }
 }
+
+terraform {
+  cloud {
+    organization = "aws_quintrix_training"
+
+    workspaces {
+      name = "quinxtrix-aws-eng"
+    }
+  }
+}
+
 
 # Configure the AWS Provider
 provider "aws" {
