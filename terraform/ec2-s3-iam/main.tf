@@ -2,21 +2,21 @@ data "aws_ami" "linux_ami" {
   most_recent = true
   owners      = ["amazon"]
 
-filter {
+  filter {
     name   = "root-device-type"
     values = ["ebs"]
   }
 
-filter {
+  filter {
     name   = "virtualization-type"
     values = ["hvm"]
   }
 
 }
 
-output "amiid"{
+output "amiid" {
   value       = data.aws_ami.linux_ami.id
- description = "Instance ID"
+  description = "Instance ID"
 }
 
 //
@@ -50,8 +50,8 @@ resource "aws_instance" "my_vm1" {
   }
 }
 
-output "ec2amiid"{
+output "ec2amiid" {
   value       = aws_instance.my_vm1.ami
- description = "Instance ID"
+  description = "Instance ID"
 }
 

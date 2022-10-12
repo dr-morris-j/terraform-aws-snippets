@@ -170,9 +170,9 @@ data "aws_ami" "ubuntu" {
   }
 }
 
-output "amiid"{
+output "amiid" {
   value       = data.aws_ami.linux_ami.id
- description = "Instance ID"
+  description = "Instance ID"
 }
 
 locals {
@@ -191,8 +191,8 @@ locals {
 resource "aws_instance" "my_vm2" {
   ami                  = data.aws_ami.linux_ami.id
   instance_type        = local.type
-  key_name        = aws_key_pair.deployer.key_name
-  security_groups = [aws_security_group.ec2SG.name]
+  key_name             = aws_key_pair.deployer.key_name
+  security_groups      = [aws_security_group.ec2SG.name]
   iam_instance_profile = aws_iam_instance_profile.ec2_instance_profile_role.id
 
   tags = {

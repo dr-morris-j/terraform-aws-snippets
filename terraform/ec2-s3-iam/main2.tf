@@ -6,13 +6,13 @@ data "aws_subnet_ids" "all_subnet" {
 }
 
 locals {
-  all_subnet_ids = sort(data.aws_subnet_ids.all_subnet.ids)
+  all_subnet_ids   = sort(data.aws_subnet_ids.all_subnet.ids)
   first_subnet_id  = local.all_subnet_ids[0]
   other_subnet_ids = setsubtract(local.all_subnet_ids, toset([local.first_subnet_id]))
 }
 
 output "all_subnet_ids" {
-  value = local.all_subnet_ids
+  value       = local.all_subnet_ids
   description = "all_subnet_ids"
 }
 

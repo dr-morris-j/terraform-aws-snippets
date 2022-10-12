@@ -13,7 +13,7 @@ resource "aws_sns_topic" "my_first_sns_topic" {
 }
 
 resource "aws_sns_topic_policy" "my_sns_topic_policy" {
-  arn = aws_sns_topic.my_first_sns_topic.arn
+  arn    = aws_sns_topic.my_first_sns_topic.arn
   policy = data.aws_iam_policy_document.my_custom_sns_policy_document.json
 }
 

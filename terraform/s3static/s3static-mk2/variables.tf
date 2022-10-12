@@ -3,5 +3,5 @@ locals {
 }
 
 locals {
- bucket_name = "baekgu"
+  bucket_name = "baekgu"
 }

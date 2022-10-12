@@ -5,7 +5,7 @@ resource "random_pet" "this" {
 resource "aws_s3_bucket" "my_test_bucket" {
   bucket = "${local.bucket_name}-${random_pet.this.id}"
   acl    = "public-read"
-   website {
+  website {
     index_document = "index.html"
     error_document = "error.html"
   }

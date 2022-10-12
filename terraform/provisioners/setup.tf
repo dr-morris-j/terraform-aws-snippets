@@ -25,7 +25,7 @@ output "private_key" {
   sensitive = true
 }
 output "keyname" {
-  value = aws_key_pair.webserver-key.key_name
+  value       = aws_key_pair.webserver-key.key_name
   description = "name of key"
 }
 
