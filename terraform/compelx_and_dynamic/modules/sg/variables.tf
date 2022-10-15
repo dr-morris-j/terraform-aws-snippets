@@ -19,7 +19,19 @@ variable "rules" {
         "0.0.0.0/0"]
     },
     {
+      port = 443
+      proto = "tcp"
+      cidr_blocks = [
+        "0.0.0.0/0"]
+    },
+    {
       port = 22
+      proto = "tcp"
+      cidr_blocks = [
+        "0.0.0.0/0"]
+    },
+    {
+      port = 3306
       proto = "tcp"
       cidr_blocks = [
         "0.0.0.0/0"]

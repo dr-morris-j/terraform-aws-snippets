@@ -1,0 +1,12 @@
+vpc 1
+igw 1
+subnetgroup (4)
+asg 1
+ec2 2 (2 subnet)
+> need keypair
+efs 1 (mount and connect to 2 ec2)
+> need `depends on EC2`
+run shell script write to efs
+rds 1 (other 2 subnet) + (only ec2 access)
+
+**in modules**
