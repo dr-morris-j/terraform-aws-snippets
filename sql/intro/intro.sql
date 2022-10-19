@@ -27,7 +27,7 @@ CREATE TABLE orders (
 );
 
 CREATE TABLE hr (
-    ticket_number INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    ticket_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     product_id INT,
     customer_id INT,
     description TEXT NOT NULL,
