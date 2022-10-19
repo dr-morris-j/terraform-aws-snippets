@@ -1,0 +1,13 @@
+✅ Create database
+
+✅ Create customer, order, hr, marketing tables
+
+✅ custID is a FK in order, hr, marketing
+
+✅ columns are irrelevant.
+
+✅ 10 customers
+
+⚠ 50 order, 50 hr, 50 marketing data
+
+✅ use constraints at own discretion
