@@ -61,6 +61,3 @@ def terminate_instance(instance_id, region):
         print(response)
     except:
         print('Please enter a valid instance id or region.')
-
-
-# IAM
