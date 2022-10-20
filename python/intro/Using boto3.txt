@@ -1,7 +1,7 @@
 Using boto3:
 
-Create EC2 Instance
-Create S3 bucket
-Create IAM policy and role 
+✅ Create EC2 Instance
+✔ Create S3 bucket
+✅ Create IAM policy and role 
 Copy into AWS lambda
 Send Sheth *.py file
