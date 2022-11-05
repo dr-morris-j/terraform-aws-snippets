@@ -2,7 +2,7 @@ resource "random_pet" "this" {
   length = 3
 }
 
-resource "aws_s3_bucket" "my_test_bucket" {
+resource "aws_s3_bucket" "bucket_bucket" {
   bucket = "${local.bucket_name}-${random_pet.this.id}"
   acl    = "public-read"
   website {
@@ -17,7 +17,7 @@ resource "aws_s3_bucket" "my_test_bucket" {
 }
 
 resource "aws_s3_bucket_policy" "allow_access_from_another_account" {
-  bucket = aws_s3_bucket.my_test_bucket.id
+  bucket = aws_s3_bucket.bucket_bucket.id
   policy = data.aws_iam_policy_document.allow_access_from_another_account.json
 }
 
@@ -33,14 +33,14 @@ data "aws_iam_policy_document" "allow_access_from_another_account" {
     ]
 
     resources = [
-      aws_s3_bucket.my_test_bucket.arn,
-      "${aws_s3_bucket.my_test_bucket.arn}/*",
+      aws_s3_bucket.bucket_bucket.arn,
+      "${aws_s3_bucket.bucket_bucket.arn}/*",
     ]
   }
 }
 
 resource "aws_s3_bucket_object" "index" {
-  bucket      = aws_s3_bucket.my_test_bucket.id
+  bucket      = aws_s3_bucket.bucket_bucket.id
   key         = "index.html"
   source      = "index.html"
   source_hash = filemd5("index.html")
@@ -49,7 +49,7 @@ resource "aws_s3_bucket_object" "index" {
 
 resource "aws_s3_bucket_object" "error" {
 
-  bucket      = aws_s3_bucket.my_test_bucket.id
+  bucket      = aws_s3_bucket.bucket_bucket.id
   key         = "error.html"
   source      = "error.html"
   source_hash = filemd5("error.html")
