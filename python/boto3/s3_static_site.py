@@ -1,12 +1,43 @@
 # Random string because I need a bucket name
 
+# import string
 import numpy as np
-import string
+from english_words import english_words_set
 
-arbitrary_phrase = "chessapeak_bay"
+# arbitrary_phrase = "chessapeak_bay"
+# random_string = np.random.choice(np.array(list(string.ascii_lowercase)), size=len(arbitrary_phrase))
+# random_string = ''.join(i for i in random_string)
 
-random_string = np.random.choice(np.array(list(string.ascii_lowercase)), size=len(arbitrary_phrase))
-random_string = ''.join(i for i in random_string)
+def get_sample_and_population():
+    sample_size = int(np.random.rand()*10)
+    population = int(np.random.rand()*10)
+    if sample_size == 0:
+        sample_size = int(np.random.rand()*10 + 1)
+    if population <= sample_size:
+        population = int(np.random.rand()*10 + 1)
+    return sample_size, population
+
+def find_word_index():
+    word_index = int(np.random.sample()*100)
+    return word_index
+
+sample_size, population = get_sample_and_population()
+
+def generate_string(sample = sample_size, pops = population):
+    words = np.random.choice([list(english_words_set)[find_word_index()] for i in range(pops)], size=sample)
+    words = list(dict.fromkeys(list(words)))
+    try:
+        if len(words) < 2:
+            words = generate_string()
+        else:
+            words = '-'.join(i for i in words)
+    except:
+        words = np.random.choice([list(english_words_set)[find_word_index()] for i in range(pops)])
+        words = '-'.join(i for i in words)
+    
+    return words
+
+random_string = generate_string()
 
 # Static Bucket Website
 
