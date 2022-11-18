@@ -16,7 +16,7 @@ def string_to_num(cypher):
     return(sum(index))
 
 def get_sample_and_population():
-    sample_size = int(np.random.rand()*10)
+    sample_size = string_to_num(str(uuid.uuid4()))
     population = int(np.random.rand()*10)
     if sample_size == 0:
         sample_size = int(np.random.rand()*10 + 1)
