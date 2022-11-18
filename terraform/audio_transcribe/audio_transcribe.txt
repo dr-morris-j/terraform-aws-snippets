@@ -1,0 +1,3 @@
+lamba fxn: boto3 -> transcribe
+iam role/policy: s3 transcribe cloudwatch 
+s3 bucket: event notification create object with extension filter as trigger

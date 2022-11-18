@@ -1,12 +1,19 @@
 # Random string because I need a bucket name
 
-# import string
+import uuid
 import numpy as np
 from english_words import english_words_set
 
-# arbitrary_phrase = "chessapeak_bay"
-# random_string = np.random.choice(np.array(list(string.ascii_lowercase)), size=len(arbitrary_phrase))
-# random_string = ''.join(i for i in random_string)
+def string_to_num(cypher):
+    index = []
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    for element in cypher.split('-'):
+        for i in range(len(element)):
+            if element[i] in alphabet:
+                index.append(alphabet.index(element[i])+1)
+            else:
+                index.append(int(element[i]))
+    return(sum(index))
 
 def get_sample_and_population():
     sample_size = int(np.random.rand()*10)
@@ -18,7 +25,7 @@ def get_sample_and_population():
     return sample_size, population
 
 def find_word_index():
-    word_index = int(np.random.sample()*100)
+    word_index = string_to_num(str(uuid.uuid4()))
     return word_index
 
 sample_size, population = get_sample_and_population()
