@@ -1,0 +1,4 @@
+aws lambda function for multi region backup on ec2
+
+aws lambda function for s3 needs to be private
+
