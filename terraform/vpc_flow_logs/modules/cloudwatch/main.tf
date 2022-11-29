@@ -80,6 +80,15 @@ data "aws_iam_policy_document" "vpc_flow_log_cloudwatch" {
 
 ###### S3 BUCKET CONFIG ######
 
-resource "aws_s3_bucket" "example" {
-  bucket = "example"
+resource "random_pet" "this" {
+  length = 3
+}
+
+resource "aws_s3_bucket" "bucket_bucket" {
+  bucket = "${local.bucket_name}-${random_pet.this.id}"
+
+  tags = {
+    Name        = "${local.bucket_name}-${random_pet.this.id}"
+    Environment = var.environment
+  }
 }
