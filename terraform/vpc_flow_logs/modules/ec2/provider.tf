@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 4.0"
+      version = "~> 4.0"
     }
   }
 }
@@ -10,10 +10,4 @@ terraform {
 # Configure the AWS Provider
 provider "aws" {
   region = "us-east-1"
-  default_tags {
-    tags = {
-      hashicorp-learn = "aws-asg1"
-    }
-  }
 }
-
