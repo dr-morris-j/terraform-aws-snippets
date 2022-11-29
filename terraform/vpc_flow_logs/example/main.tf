@@ -57,3 +57,8 @@ module "efs" {
 module "cloudwatch" {
   source = ".\\..\\modules\\cloudwatch"
 }
+
+module "s3" {
+  source = ".\\..\\modules\\s3"
+  env = "dev"
+}
