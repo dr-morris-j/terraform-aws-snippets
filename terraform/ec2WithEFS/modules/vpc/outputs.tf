@@ -19,3 +19,4 @@ output "subnet2_id" {
 output "subnet3_id" {
   value = aws_subnet.subnet3.id
 }
+
