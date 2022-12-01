@@ -58,13 +58,3 @@ resource "aws_default_route_table" "internet_route" {
     Name = "Terraform-RouteTable"
   }
 }
-
-### VPC OUTPUT ###
-
-output "vpc_id" {
-  value = aws_vpc.vpc.id
-}
-
-output "subnet0_id" {
-  value = aws_subnet.subnet0.id
-}
